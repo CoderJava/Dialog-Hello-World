@@ -1,14 +1,30 @@
 # dialog_hello_world
+Plugin to show hello world dialog.
 
-Dialog hello world.
+## Usage
+To use this plugin, add ```dialog_hello_world``` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
 
-## Getting Started
+### Example
+```dart
+import 'package:dialog_hello_world/dialog_hello_world.dart';
+import 'package:flutter/material.dart';
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Example Dialog Hello World'),
+      ),
+      body: Center(
+        child: RaisedButton(
+          child: Text('Tap Me'),
+          onPressed: () async {
+            await DialogHelloWorld.showAlertDialogHelloWorld(context: context);
+          },
+        ),
+      ),
+    );
+  }
+}
+```
