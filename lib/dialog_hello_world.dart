@@ -1,7 +1,14 @@
 library dialog_hello_world;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
+import 'package:flutter/material.dart';
+
+class DialogHelloWorld {
+  static Future showAlertDialogHelloWorld({@required BuildContext context}) {
+    assert(context != null, 'Context is null!!!');
+    return showDialog(context: context, builder: (context) {
+      return AlertDialog(
+        content: Text('Hello World'),
+      );
+    });
+  }
 }
